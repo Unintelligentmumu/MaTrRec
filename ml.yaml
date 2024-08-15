@@ -44,8 +44,8 @@ stopping_step: 10
 train_neg_sample_args: ~
 initializer_range: 0.02         # (float) The standard deviation for normal initialization.
 
-metrics: ["Recall","NDCG","MRR"]
-topk: [1,5,10,20]
+metrics: ["Recall","NDCG"]
+topk: [5,10,20]
 valid_metric: NDCG@10
 eval_batch_size: 4096
 weight_decay: 0.0
