@@ -25,7 +25,6 @@ class MaTrRec(SequentialRecommender):
         self.item_embedding = nn.Embedding(
             self.n_items, self.hidden_size, padding_idx=0
         )
-        self.position_embedding = nn.Embedding(self.max_seq_length, self.hidden_size)
         self.LayerNorm = nn.LayerNorm(self.hidden_size, eps=1e-12)
         self.dropout = nn.Dropout(self.dropout_prob)
         
@@ -63,16 +62,8 @@ class MaTrRec(SequentialRecommender):
             module.bias.data.zero_()
 
     def forward(self, item_seq, item_seq_len):
-        position_ids = torch.arange(
-            item_seq.size(1), dtype=torch.long, device=item_seq.device
-        )
-        position_ids = position_ids.unsqueeze(0).expand_as(item_seq)
-        position_embedding = self.position_embedding(position_ids)
-
-        item_emb = self.item_embedding(item_seq)
-        input_emb = item_emb + position_embedding
         
-        #item_emb = self.item_embedding(item_seq)
+        item_emb = self.item_embedding(item_seq)
         item_emb = self.LayerNorm(item_emb)
         item_emb = self.dropout(item_emb)
         
