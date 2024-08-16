@@ -1,7 +1,6 @@
 gpu_id: '0'
 log_wandb: False
 
-# MARec settings
 hidden_size: 64                 # (int) Number of features in the hidden state. 
 n_layers: 1                   # (int) Number of Mamba layers.
 loss_type: 'CE'                 # (str) Type of loss function. Range in ['BPR', 'CE'].
