@@ -7,6 +7,8 @@
 Our experimental platform is equipped with an NVIDIA V100 GPU, Ubuntu 22.04, PyTorch 2.1.2, and CUDA 12.1.
 
 You can also refer to the required environment specifications in requirements.txt
+
+The first run will download the dataset resources. Once the download is complete, please run it again.
 ### Run MaTrRec
 
 ```python run_recbole.py --model=MaTrRec --dataset=ml-1m  --config_files=ml.yaml```  
