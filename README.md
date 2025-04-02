@@ -33,16 +33,6 @@ The first run will download the dataset resources. Once the download is complete
 
 ```python run_recbole.py --model=MaTrRec1 --dataset=amazon-office-products --config_files=amazon.yaml```
 
-### Comparative experiment
-
-```python run_recbole.py --model=SASRec --dataset=ml-1m  --config_files=ml.yaml```
-
-```python run_recbole.py --model=SASRec --dataset=amazon-musical-instruments  --config_files=amazon.yaml```
-
-```python run_recbole.py --model=Mamba4Rec --dataset=ml-1m  --config_files=ml.yaml```
-
-```python run_recbole.py --model=Mamba4Rec --dataset=amazon-musical-instruments  --config_files=amazon.yaml```
-
 
 
 ## Acknowledgment
